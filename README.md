@@ -20,7 +20,6 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
 
 <br>
 <br>
-<br>
 
 # PyTorch Installation
 
@@ -78,12 +77,9 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
     In my case (MacOs) I get False returned.
 
 <br>
-<br>
-<br>
 
 ***
 
-<br>
 <br>
 <br>
 
@@ -115,12 +111,9 @@ You can find basic operations with tensors in the script `tensors.py`.
 - requires_grad
 
 <br>
-<br>
-<br>
 
 ***
 
-<br>
 <br>
 <br>
 
@@ -134,12 +127,9 @@ Important to know is, whenever you want to calculate the gradients, you must spe
 - Stop PyTorch tracking history
 
 <br>
-<br>
-<br>
 
 ***
 
-<br>
 <br>
 <br>
 
@@ -160,12 +150,9 @@ Whole concept:
 - Calculate loss (with y_hat)
 
 <br>
-<br>
-<br>
 
 ***
 
-<br>
 <br>
 <br>
 
