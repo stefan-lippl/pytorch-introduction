@@ -11,8 +11,9 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
 | [PyTorch Installation](#pytorch-installation) | How to setup PyTorch locally (the right way incl. vir env) |
 | [Tensors Basics](#tensors-basics) | Create tensors and basic operations (Add, Sum etc.) |
 | [Autograd](#gradient-optimization-with-autograd) | Calculate the gradients of a tensor |
-| [Backpropagation](#backpropagation) | How BP works in theoretical |
-| [Gradient Descent](#gradient-descent) | Implement a Linear Regression and do everything manually |
+| [Backpropagation](#backpropagation) | How Backpropagation works in theoretical + small example |
+| [Gradient Descent](#gradient-descent) | Implement a Linear Regression and do everything manually as well as with the functionality of PyTorch. Also implement a Linear Regression class from scratch |
+| [Linear Regression](#linear-regression) | @todo |
 
 <br>
 
@@ -187,3 +188,32 @@ You can find gradient optimization examples in the script `gradient_descent_*.py
     - forward pass: compute the prediction
     - backward pass: get gradients
     - update weights
+
+<br>
+
+***
+
+<br>
+<br>
+
+# Linear Regression
+In `linear_regression.py` we built a *Linear Regression* with a loaded dataset, completly with **PyTorch**. The result gets plotted with matplotlib in the end.
+The following modules is used:
+```bach
+model = nn.Linear(input_size, output_size)
+criterion = nn.MSELoss()
+optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+```
+
+<br>
+
+The output looks like this
+
+![Linear Regression](media/lr_output.png)
+
+<br>
+
+***
+
+<br>
+<br>
