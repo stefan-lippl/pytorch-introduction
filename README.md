@@ -1,4 +1,4 @@
-# PyTorch Basics
+# PyTorch Introduction - with examples
 
 This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lUUr864M) from Patrick (YT: [Python Engineer](https://www.youtube.com/channel/UCbXgNpp0jedKWcQiULLbDTA)) about how to use **PyTorch**.
 
@@ -15,7 +15,8 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
 | [Gradient Descent](#gradient-descent) | Implement a Linear Regression and do everything manually as well as with the functionality of PyTorch. Also implement a Linear Regression class from scratch |
 | [Linear Regression](#linear-regression) | Implement a Linear Regression completely with PyTorch modules |
 | [Logistic Regression](#logistic-regression) | Implement a Logistic Regression completely with PyTorch modules |
-| [Datasets & Dataloader](#datasets-and-dataloader) | @TODO |
+| [Datasets & Dataloader](#datasets-and-dataloader) | Shows how you can build your own dataloader with use of the lib datasets |
+| [Dataset Transforms](#dataset-transforms) | Shows how to transform you own dataset properly for your needs |
 
 <br>
 
@@ -259,3 +260,31 @@ This section (`datasets_and_dataloader`) is about how to use datasets and how to
 - *batch_size* = number of training samples in one forward & backward pass
 - *number of iterations* = number of passes, each pass using [batch_size] number of samples
 - e.g. 100 samples, batch_size=20 --> 100/20 = 5 iterations for 1 epoch
+
+<br>
+
+### More datasets
+```bash
+torchvision.datasets.
+````
+
+- MNIST()
+- fashion-mnist
+- cifar
+- coco
+- ...
+
+<br>
+
+***
+
+<br>
+<br>
+
+# Dataset Transforms
+### About
+In this section (`dataset_transforms`) we see, how to transform datasets. You can easily transform any kind of data you want, to any kind of data you need
+
+<br>
+
+Important to know is, that such a transform class, always need a `__call__` method which can be used.
