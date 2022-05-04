@@ -433,3 +433,4 @@ AF apply a non-linear transformation and decide whether a neuron should be activ
     ```python
     out = torch.relu(self.linear1(x))
     ```
+    
