@@ -18,7 +18,7 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
 | [Datasets & Dataloader](#datasets-and-dataloader) | Shows how you can build your own dataloader with use of the lib datasets |
 | [Dataset Transforms](#dataset-transforms) | Shows how to transform you own dataset properly for your needs |
 | [Softmax & Cross Entropy](#softmax-and-cross-entropy) | Shows how to transform you own dataset properly for your needs |
-| [Activation Functions](#activation-functions) | TBD |
+| [Activation Functions](#activation-functions) | What are the different activation functions and how to use them in code |
 
 
 <br>
@@ -28,7 +28,7 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
 <br>
 <br>
 
-# PyTorch Installation
+# PyTorch Installation [^](#table-of-content)
 
 1) Go to [pytorch.org](www.pytorch.org) and click on **Install**
 2) **Configure** your settings, in my case:
@@ -90,7 +90,7 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
 <br>
 <br>
 
-# Tensors Basics
+# Tensors Basics [^](#table-of-content)
 You can find basic operations with tensors in the script `tensors.py`.
 
 ### Topics:
@@ -124,7 +124,7 @@ You can find basic operations with tensors in the script `tensors.py`.
 <br>
 <br>
 
-# Gradient optimization with `autograd`
+# Gradient optimization with `autograd`  [^](#table-of-content)
 You can find gradient optimization examples in the script `autograd.py`.
 
 Important to know is, whenever you want to calculate the gradients, you must specify `requires_grad=True` as attribute inside your tensor.
@@ -140,7 +140,7 @@ Important to know is, whenever you want to calculate the gradients, you must spe
 <br>
 <br>
 
-# Backpropagation
+# Backpropagation  [^](#table-of-content)
 You can find gradient optimization examples in the script `backpropagation.py`.
 
 Whole concept:
@@ -163,7 +163,7 @@ Whole concept:
 <br>
 <br>
 
-# Gradient Descent
+# Gradient Descent  [^](#table-of-content)
 You can find gradient optimization examples in the script `gradient_descent_*.py`.
 
 <br>
@@ -202,7 +202,7 @@ You can find gradient optimization examples in the script `gradient_descent_*.py
 <br>
 <br>
 
-# Linear Regression
+# Linear Regression  [^](#table-of-content)
 ### About
 In `linear_regression.py` we built a *Linear Regression* with a loaded dataset, completly with **PyTorch**. The result gets plotted with matplotlib in the end.
 The following modules are used:
@@ -229,7 +229,7 @@ The output looks like this
 <br>
 <br>
 
-# Logistic Regression
+# Logistic Regression  [^](#table-of-content)
 ### About
 In `logistic_regression.py` we built a *Logistic Regression* with a loaded dataset, completly with **PyTorch**.
 
@@ -252,7 +252,7 @@ optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 <br>
 <br>
 
-# Datasets and Dataloader
+# Datasets and Dataloader  [^](#table-of-content)
 ### About
 This section (`datasets_and_dataloader`) is about how to use datasets and how to build your own dataloader class with a specific dataset.
 
@@ -284,7 +284,7 @@ torchvision.datasets.
 <br>
 <br>
 
-# Dataset Transforms
+# Dataset Transforms [^](#table-of-content)
 ### About
 In this section (`dataset_transforms`) we see, how to transform datasets. You can easily transform any kind of data you want, to any kind of data you need
 
@@ -299,7 +299,7 @@ Important to know is, that such a transform class, always need a `__call__` meth
 <br>
 <br>
 
-# Softmax and Cross Entropy
+# Softmax and Cross Entropy [^](#table-of-content)
 ## Softmax
 ### Formular of Softmax
 
@@ -361,4 +361,75 @@ Y_pred has raw scores (logits), **no Softmax!**
 <br>
 <br>
 
-# Activation Functions
+# Activation Functions [^](#table-of-content)
+AF apply a non-linear transformation and decide whether a neuron should be activated or not.
+
+### Most pupular
+- Step functin
+- Sigmoid
+- TanH
+- ReLU
+- Leaky ReLU
+- Softmax
+
+<br>
+
+### Step function
+
+![Step function](media/step_function.png)
+
+> This is not used in practice
+
+<br>
+
+### Sigmoid function
+
+![Sigmoid function](media/sigmoid_function.png)
+
+> Typically used in the *last layer* of a **binary classification**
+
+<br>
+
+### TanH function
+
+![TanH function](media/tanh_function.png)
+
+> Hidden layer
+
+<br>
+
+### ReLU function
+
+![ReLU function](media/relu_function.png)
+
+> If you do not know what to use, use ReLU for *hidden layers*
+
+<br>
+
+### Leaky ReLU function
+
+![Leaky ReLU function](media/leaky_relu_function.png)
+
+> Imporoved version of *ReLU*. Tries to solve the *vanishing gradient problem*
+
+<br>
+
+### Softmax function
+
+![Softmax function](media/softmax_function.png)
+
+> Good in *last layer* of **multi class classification**
+
+<br>
+
+### How to apply the activation functions
+
+1) Create nn modules
+    ```python
+    self.linear1 = nn.Linear(input_size, hidden_size)
+    self.relu = nn.ReLU()
+    ```
+2) Use activation function directly in forward pass
+    ```python
+    out = torch.relu(self.linear1(x))
+    ```
