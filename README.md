@@ -159,11 +159,31 @@ Whole concept:
 # Gradient Descent
 You can find gradient optimization examples in the script `gradient_descent_*.py`.
 
+<br>
+
 ### Steps:
 1) Prediction: `PyTorch Model`
 2) Gradients Computation: `Autograd`
 3) Loss Computation: `PyTorch Loss`
 4) Parameter updates: `PyTorch Optimizer`
 
-In `gradient_descent_from_scratch` is everything written from scratch, the weight, the numpy array etc.
-In `gradient_descent_with_torch_gradient` we replace the numpy arrays with torch tensors. The forward and loss function are still the same, because the same syntax can be used in PyTorch. We also replace the gradient function with a ready-to-use PyTorch function.
+
+<br>
+
+| Filename | Usecase |
+| -------- | ------- |
+| `gradient_descent_from_scratch` | everything written from scratch, the weight, the numpy array etc. |
+| `gradient_descent_with_torch_gradient` | we replace the numpy arrays with torch tensors. The forward and loss function are still the same, because the same syntax can be used in PyTorch. We also replace the gradient function with a ready-to-use PyTorch function |
+| `gradient_descent_with_torch_grad_loss_para` | we replace the remaining manually elements with PyTorch functionality by using the Loss and Optimizer classes from PyTorch |
+| `gradient_descent_with_pytorch` | we also replace the Prediction with an PyTorch model, so PyTorch do the complete pipeline for us |
+| `gradient_descent_custom_lr_model` | is a little example, how to build a Linear Regression model from scratch as a first introduction how this works for further purpose |
+
+<br>
+
+### Typical Pipeline Steps
+1) Design model (input size, output size, forward pass)
+2) Construct the loss and optimizers
+3) Training loop:
+    - forward pass: compute the prediction
+    - backward pass: get gradients
+    - update weights
