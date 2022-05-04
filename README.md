@@ -10,9 +10,9 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
 | ------- | ----------- |
 | [PyTorch Installation](#pytorch-installation) | How to setup PyTorch locally (the right way incl. vir env) |
 | [Tensors Basics](#tensors-basics) | Create tensors and basic operations (Add, Sum etc.) |
-| [Autograd](#gradient-optimization-with-autograd) |  |
-| [Backpropagation](#backpropagation) |  |
-| [Gradient Descent](#gradient-descent) |  |
+| [Autograd](#gradient-optimization-with-autograd) | Calculate the gradients of a tensor |
+| [Backpropagation](#backpropagation) | How BP works in theoretical |
+| [Gradient Descent](#gradient-descent) | Implement a Linear Regression and do everything manually |
 
 <br>
 
@@ -157,4 +157,13 @@ Whole concept:
 <br>
 
 # Gradient Descent
-You can find gradient optimization examples in the script `backpropagation.py`.
+You can find gradient optimization examples in the script `gradient_descent_*.py`.
+
+### Steps:
+1) Prediction: `PyTorch Model`
+2) Gradients Computation: `Autograd`
+3) Loss Computation: `PyTorch Loss`
+4) Parameter updates: `PyTorch Optimizer`
+
+In `gradient_descent_from_scratch` is everything written from scratch, the weight, the numpy array etc.
+In `gradient_descent_with_torch_gradient` we replace the numpy arrays with torch tensors. The forward and loss function are still the same, because the same syntax can be used in PyTorch. We also replace the gradient function with a ready-to-use PyTorch function.
