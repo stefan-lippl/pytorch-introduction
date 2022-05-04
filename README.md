@@ -17,6 +17,9 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
 | [Logistic Regression](#logistic-regression) | Implement a Logistic Regression completely with PyTorch modules |
 | [Datasets & Dataloader](#datasets-and-dataloader) | Shows how you can build your own dataloader with use of the lib datasets |
 | [Dataset Transforms](#dataset-transforms) | Shows how to transform you own dataset properly for your needs |
+| [Softmax & Cross Entropy](#softmax-and-cross-entropy) | Shows how to transform you own dataset properly for your needs |
+| [Activation Functions](#activation-functions) | TBD |
+
 
 <br>
 
@@ -288,3 +291,74 @@ In this section (`dataset_transforms`) we see, how to transform datasets. You ca
 <br>
 
 Important to know is, that such a transform class, always need a `__call__` method which can be used.
+
+<br>
+
+***
+
+<br>
+<br>
+
+# Softmax and Cross Entropy
+## Softmax
+### Formular of Softmax
+
+![Softmax](media/softmax.png)
+
+<br>
+
+### Output
+The output will be between 0 and 1, so we get ***probabilities*** back.
+
+<br>
+
+### Example
+
+![Softmax](media/sm_example.png)
+
+<br>
+
+## Cross-Entropy
+### About
+The *Cross-Entropy* measures the performance of the classification model and the output is a **probability** between 0 and 1. It can be used in multi-class problems. The loss increases as the predicted probability diverges from the actual label.
+> -> The better the prediction, the lower the loss
+
+<br>
+
+### Formular of Cross-Entropy
+
+![Cross-Entropy](media/cross_entropy_formular.png)
+
+<br>
+
+## nn.CrossEntropyLoss
+
+***Careful!***
+
+nn.CrossentropyLoss applies:
+- nn.LogSoftmax
+- nn.NLLLoss (negative log likelihood loss)
+
+-> ***NO** Softmax in last layer!*
+
+Y has class label, **not One-Hot!**
+Y_pred has raw scores (logits), **no Softmax!**
+
+<br>
+
+## Binaryclass - SIGMOID
+
+![Neural Network](media/nn_binary.png)
+
+## Multiclass - SOFTMAX
+
+![Neural Network](media/nn_multi.png)
+
+<br>
+
+***
+
+<br>
+<br>
+
+# Activation Functions
