@@ -19,6 +19,7 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
 | [Dataset Transforms](#dataset-transforms) | Shows how to transform you own dataset properly for your needs |
 | [Softmax & Cross Entropy](#softmax-and-cross-entropy) | Shows how to transform you own dataset properly for your needs |
 | [Activation Functions](#activation-functions) | What are the different activation functions and how to use them in code |
+| [Feed Forward Network](#feed-forward-network) | Build a first FFN from scratch, with DataLoader, MNIST dataset and a Neural Network with one hidden layer and ReLU activation function |
 
 
 <br>
@@ -28,7 +29,8 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
 <br>
 <br>
 
-# PyTorch Installation [^](#table-of-content)
+## [^](#table-of-content)
+# PyTorch Installation 
 
 1) Go to [pytorch.org](www.pytorch.org) and click on **Install**
 2) **Configure** your settings, in my case:
@@ -90,7 +92,8 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
 <br>
 <br>
 
-# Tensors Basics [^](#table-of-content)
+## [^](#table-of-content)
+# Tensors Basics 
 You can find basic operations with tensors in the script `tensors.py`.
 
 ### Topics:
@@ -124,7 +127,8 @@ You can find basic operations with tensors in the script `tensors.py`.
 <br>
 <br>
 
-# Gradient optimization with `autograd`  [^](#table-of-content)
+## [^](#table-of-content)
+# Gradient optimization with `autograd`  
 You can find gradient optimization examples in the script `autograd.py`.
 
 Important to know is, whenever you want to calculate the gradients, you must specify `requires_grad=True` as attribute inside your tensor.
@@ -140,7 +144,8 @@ Important to know is, whenever you want to calculate the gradients, you must spe
 <br>
 <br>
 
-# Backpropagation  [^](#table-of-content)
+## [^](#table-of-content)
+# Backpropagation  
 You can find gradient optimization examples in the script `backpropagation.py`.
 
 Whole concept:
@@ -163,7 +168,8 @@ Whole concept:
 <br>
 <br>
 
-# Gradient Descent  [^](#table-of-content)
+## [^](#table-of-content)
+# Gradient Descent  
 You can find gradient optimization examples in the script `gradient_descent_*.py`.
 
 <br>
@@ -202,7 +208,8 @@ You can find gradient optimization examples in the script `gradient_descent_*.py
 <br>
 <br>
 
-# Linear Regression  [^](#table-of-content)
+## [^](#table-of-content)
+# Linear Regression  
 ### About
 In `linear_regression.py` we built a *Linear Regression* with a loaded dataset, completly with **PyTorch**. The result gets plotted with matplotlib in the end.
 The following modules are used:
@@ -252,7 +259,8 @@ optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 <br>
 <br>
 
-# Datasets and Dataloader  [^](#table-of-content)
+## [^](#table-of-content)
+# Datasets and Dataloader  
 ### About
 This section (`datasets_and_dataloader`) is about how to use datasets and how to build your own dataloader class with a specific dataset.
 
@@ -284,7 +292,8 @@ torchvision.datasets.
 <br>
 <br>
 
-# Dataset Transforms [^](#table-of-content)
+## [^](#table-of-content)
+# Dataset Transforms 
 ### About
 In this section (`dataset_transforms`) we see, how to transform datasets. You can easily transform any kind of data you want, to any kind of data you need
 
@@ -299,7 +308,8 @@ Important to know is, that such a transform class, always need a `__call__` meth
 <br>
 <br>
 
-# Softmax and Cross Entropy [^](#table-of-content)
+## [^](#table-of-content)
+# Softmax and Cross Entropy 
 ## Softmax
 ### Formular of Softmax
 
@@ -361,7 +371,8 @@ Y_pred has raw scores (logits), **no Softmax!**
 <br>
 <br>
 
-# Activation Functions [^](#table-of-content)
+## [^](#table-of-content)
+# Activation Functions 
 AF apply a non-linear transformation and decide whether a neuron should be activated or not.
 
 ### Most pupular
@@ -433,4 +444,25 @@ AF apply a non-linear transformation and decide whether a neuron should be activ
     ```python
     out = torch.relu(self.linear1(x))
     ```
-    
+
+<br>
+
+***
+
+<br>
+<br>
+
+## [^](#table-of-content)
+# Feed Forward Network
+### About
+In `feed_forward_network` we train a first FFN model, which data is based on the MNIST dataset. We first load and transform the data. Then we build the model with all it's depending parts.
+
+### Steps
+1) MNIST
+2) DataLoader, Transformation
+3) Multilayer Neural Net, activation function
+4) Loss and Optimizer
+5) Training loop (batch training)
+6) Model evaluation
+7) GPU support
+
