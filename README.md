@@ -20,6 +20,7 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
 | [Softmax & Cross Entropy](#softmax-and-cross-entropy) | Shows how to transform you own dataset properly for your needs |
 | [Activation Functions](#activation-functions) | What are the different activation functions and how to use them in code |
 | [Feed Forward Network](#feed-forward-network) | Build a first FFN from scratch, with DataLoader, MNIST dataset and a Neural Network with one hidden layer and ReLU activation function |
+| [Concolutional Neural Network](#convolutional-neural-network-[^](#table-of-content)) | Build a first CNN from scratch based on the CIFAR-10 dataset |
 
 
 <br>
@@ -466,3 +467,12 @@ In `feed_forward_network` we train a first FFN model, which data is based on the
 6) Model evaluation
 7) GPU support
 
+<br>
+
+***
+
+<br>
+<br>
+
+## [^](#table-of-content)
+# Convolutional Neural Network [^](#table-of-content)
