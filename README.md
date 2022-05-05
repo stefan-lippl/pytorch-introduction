@@ -23,13 +23,13 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
 | [Concolutional Neural Network](#convolutional-neural-network) | Build a first CNN from scratch based on the CIFAR-10 dataset |
 | [Transfer Learning](#transfer-learning) | Use existing models which are trained on a task, modify it a bit in the last layer and reuse the model for a second task |
 | [TensorBoard](#tensorboard) | How to use TensorBoard to track different metrics like Precision, Recall, Accuracy |
+| [Save and Load Models](#save-and-load-models) | Different ways to save and load models/checkpoints from/to GPU/CPU |
 
 
 <br>
 
 ***
 
-<br>
 <br>
 
 # PyTorch Installation 
@@ -92,7 +92,6 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
 ***
 
 <br>
-<br>
 
 ## [^](#table-of-content)
 # Tensors Basics 
@@ -127,7 +126,6 @@ You can find basic operations with tensors in the script `tensors.py`.
 ***
 
 <br>
-<br>
 
 ## [^](#table-of-content)
 # Gradient optimization with `autograd`  
@@ -143,7 +141,6 @@ Important to know is, whenever you want to calculate the gradients, you must spe
 
 ***
 
-<br>
 <br>
 
 ## [^](#table-of-content)
@@ -167,7 +164,6 @@ Whole concept:
 
 ***
 
-<br>
 <br>
 
 ## [^](#table-of-content)
@@ -208,7 +204,6 @@ You can find gradient optimization examples in the script `gradient_descent_*.py
 ***
 
 <br>
-<br>
 
 ## [^](#table-of-content)
 # Linear Regression  
@@ -236,7 +231,6 @@ The output looks like this
 ***
 
 <br>
-<br>
 
 # Logistic Regression  [^](#table-of-content)
 ### About
@@ -258,7 +252,6 @@ optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 
 ***
 
-<br>
 <br>
 
 ## [^](#table-of-content)
@@ -292,7 +285,6 @@ torchvision.datasets.
 ***
 
 <br>
-<br>
 
 ## [^](#table-of-content)
 # Dataset Transforms 
@@ -307,7 +299,6 @@ Important to know is, that such a transform class, always need a `__call__` meth
 
 ***
 
-<br>
 <br>
 
 ## [^](#table-of-content)
@@ -370,7 +361,6 @@ Y_pred has raw scores (logits), **no Softmax!**
 
 ***
 
-<br>
 <br>
 
 ## [^](#table-of-content)
@@ -452,7 +442,6 @@ AF apply a non-linear transformation and decide whether a neuron should be activ
 ***
 
 <br>
-<br>
 
 ## [^](#table-of-content)
 # Feed Forward Network
@@ -472,7 +461,6 @@ In `feed_forward_network` we train a first FFN model, which data is based on the
 
 ***
 
-<br>
 <br>
 
 ## [^](#table-of-content)
@@ -528,7 +516,6 @@ Example:
 ***
 
 <br>
-<br>
 
 ## [^](#table-of-content)
 # Transfer Learning
@@ -565,7 +552,6 @@ Use existing and pretrained models - in this case ResNet18 - and retrain only th
 ***
 
 <br>
-<br>
 
 ## [^](#table-of-content)
 # TensorBoard
@@ -591,4 +577,33 @@ pip install tensorboard
 ### Start TensorBoard
 ```
 tensorboard --logdir=runs
+```
+
+<br>
+
+***
+
+<br>
+
+## [^](#table-of-content)
+# Save and Load Models
+### About
+This section is about how to save trained models and load the models anywhere in your code.
+
+torch.save can use tensors, models or any dictionary as parameter for saving
+torch.load 
+
+<br>
+
+## Save on CPU
+### Save
+```
+torch.save(model.state_dict(), PATH)
+```
+
+### Load
+```
+model = Model(*args, **kwargs)
+model.load_state_dict(torch.load(PATH))
+model.eval
 ```
