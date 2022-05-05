@@ -22,6 +22,7 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
 | [Feed Forward Network](#feed-forward-network) | Build a first FFN from scratch, with DataLoader, MNIST dataset and a Neural Network with one hidden layer and ReLU activation function |
 | [Concolutional Neural Network](#convolutional-neural-network) | Build a first CNN from scratch based on the CIFAR-10 dataset |
 | [Transfer Learning](#transfer-learning) | Use existing models which are trained on a task, modify it a bit in the last layer and reuse the model for a second task |
+| [TensorBoard](#tensorboard) | How to use TensorBoard to track different metrics like Precision, Recall, Accuracy |
 
 
 <br>
@@ -559,3 +560,35 @@ Use existing and pretrained models - in this case ResNet18 - and retrain only th
         └── ...
 ```
 
+<br>
+
+***
+
+<br>
+<br>
+
+## [^](#table-of-content)
+# TensorBoard
+### About
+This section uses the code from `feed_forward_network`. With [tensorboard](https://www.tensorflow.org/tensorboard) you can:
+- Track and visualizing metrics such as loss and accuracy
+- Visualizing the model graph (ops and layers)
+- Viewing histograms of weights, biases an other tensors as they change over time
+- Projecting embeddings to a low dimensional space
+- Displaying images, text and audo
+- And much more.
+
+<br>
+
+### Install TensorBoard
+
+```
+pip install tensorboard
+```
+
+<br>
+
+### Start TensorBoard
+```
+tensorboard --logdir=runs
+```
