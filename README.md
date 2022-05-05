@@ -20,7 +20,8 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
 | [Softmax & Cross Entropy](#softmax-and-cross-entropy) | Shows how to transform you own dataset properly for your needs |
 | [Activation Functions](#activation-functions) | What are the different activation functions and how to use them in code |
 | [Feed Forward Network](#feed-forward-network) | Build a first FFN from scratch, with DataLoader, MNIST dataset and a Neural Network with one hidden layer and ReLU activation function |
-| [Concolutional Neural Network](#convolutional-neural-network-[^](#table-of-content)) | Build a first CNN from scratch based on the CIFAR-10 dataset |
+| [Concolutional Neural Network](#convolutional-neural-network) | Build a first CNN from scratch based on the CIFAR-10 dataset |
+| [Transfer Learning](#transfer-learning) | Use existing models which are trained on a task, modify it a bit in the last layer and reuse the model for a second task |
 
 
 <br>
@@ -520,3 +521,41 @@ Example:
 - Avoid overfitting
 
 ![CNN](media/cnn_maxpool.png)
+
+<br>
+
+***
+
+<br>
+<br>
+
+## [^](#table-of-content)
+# Transfer Learning
+### About
+Use existing and pretrained models - in this case ResNet18 - and retrain only the last layer (output layer) for your specific classes.
+
+### Structure of image folder data
+```
+└── images/
+    ├── train/
+    │   ├── class_1/
+    │   │   ├── img1
+    │   │   ├── img2
+    │   │   └── ...
+    │   ├── class_2/
+    │   │   ├── img1
+    │   │   ├── img2
+    │   │   └── ...
+    │   └── ...
+    └── val/
+        ├── class_1/
+        │   ├── img1
+        │   ├── img2
+        │   └── ...
+        ├── class_2/
+        │   ├── img1
+        │   ├── img2
+        │   └── ...
+        └── ...
+```
+
