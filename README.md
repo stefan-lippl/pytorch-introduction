@@ -30,7 +30,6 @@ This is a brief summary of the 5h [course](https://www.youtube.com/watch?v=c36lU
 <br>
 <br>
 
-## [^](#table-of-content)
 # PyTorch Installation 
 
 1) Go to [pytorch.org](www.pytorch.org) and click on **Install**
@@ -475,4 +474,49 @@ In `feed_forward_network` we train a first FFN model, which data is based on the
 <br>
 
 ## [^](#table-of-content)
-# Convolutional Neural Network [^](#table-of-content)
+# Convolutional Neural Network
+### About
+CNN's work mainly on image data by using so called *convolutional filters*.
+
+### Overview and classes of CIFAR-10 dataset
+The CIFAR-10 dataset consists of 60.000 32x32 coloured images in 10 classes, 6.000 images per class. There are 50.000 training images and 10.000 test images.
+The classes are:
+- airplane
+- automobile
+- bird
+- cat
+- deer
+- dog
+- frog
+- horse
+- ship
+- truck 
+
+<br>
+
+### Typical architecture of a CNN
+
+![CNN](media/cnn.png)
+
+<br>
+
+### CNN filter kernel
+
+![CNN](media/cnn_filter.png)
+
+![CNN](media/cnn_filter2.png)
+
+Formular to calculate the output size:
+- (W - F + 2P) / S + 1
+
+Example:
+5x5 input, 3x3 filter, padding=0, stride = 1
+- (5 - 3 + 0) / 1 + 1 = 2/1 + 1 = 3x3
+
+<br>
+
+### Max Pooling
+- Reduces the number of parameters the model has to learn
+- Avoid overfitting
+
+![CNN](media/cnn_maxpool.png)
